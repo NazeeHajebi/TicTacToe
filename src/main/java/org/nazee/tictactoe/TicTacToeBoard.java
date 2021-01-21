@@ -71,13 +71,15 @@ public class TicTacToeBoard {
     }
 
     public void putBottomMiddle(String value) {
-        bottomMiddleValue = value;
-        time += 1;
-        //O wins
-        //When the middle column have the same values(X OR O) THAT VALUE WINS
-        //When the bottom row all have the same values (X or O) that value wins
+        if (bottomMiddleValue == null) {
+            bottomMiddleValue = value;
+            time += 1;
+            //O wins
+            //When the middle column have the same values(X OR O) THAT VALUE WINS
+            //When the bottom row all have the same values (X or O) that value wins
 
-        boardWinner = value;
+            boardWinner = value;
+        }
     }
 
     public void putBottomRight(String value) {
