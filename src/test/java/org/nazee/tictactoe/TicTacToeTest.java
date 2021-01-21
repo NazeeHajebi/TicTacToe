@@ -312,4 +312,15 @@ public class TicTacToeTest {
         //Check middle has an O
         Assert.assertEquals("o", ticTacToeBoard.getMiddle());
     }
+
+    @Test
+    public void checkBottomLeftStaysSameWhenDoubleClick() {
+        TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
+        // Put X in the Left Bottom of the board
+        ticTacToeBoard.putBottomLeft("x");
+        // Put O in the Left Bottom of the board
+        ticTacToeBoard.putBottomLeft("o");
+        //Check middle has an X in the left bottom
+        Assert.assertEquals("x", ticTacToeBoard.getBottomLeft());
+    }
 }

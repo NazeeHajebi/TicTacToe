@@ -16,8 +16,10 @@ public class TicTacToeBoard {
 
 
     public void putBottomLeft(String value) {
-        bottomLeftValue = value;
-        time += 1;
+        if (bottomLeftValue == null) {
+            bottomLeftValue = value;
+            time += 1;
+        }
     }
 
     public void putMiddle(String value) {
