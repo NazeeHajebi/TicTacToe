@@ -83,8 +83,10 @@ public class TicTacToeBoard {
     }
 
     public void putBottomRight(String value) {
-        bottomRightValue = value;
+        if (bottomRightValue == null){
+            bottomRightValue = value;
         time += 1;
+    }
     }
 
     public String getTopMiddle() {
