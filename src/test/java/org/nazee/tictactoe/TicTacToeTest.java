@@ -343,4 +343,45 @@ public class TicTacToeTest {
         //Check middle has an X in the left bottom
         Assert.assertEquals("x", ticTacToeBoard.getBottomRight());
     }
+    @Test
+    public void checkMiddleRightStaysSameWhenDoubleClick() {
+        TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
+        // Put X in the Left Bottom of the board
+        ticTacToeBoard.putMiddleRight("x");
+        // Put O in the Left Bottom of the board
+        ticTacToeBoard.putMiddleRight("o");
+        //Check middle has an X in the left bottom
+        Assert.assertEquals("x", ticTacToeBoard.getMiddleRight());
+    }
+    @Test
+    public void checkMiddleStaysSameWhenDoubleClick() {
+        TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
+        // Put X in the Left Bottom of the board
+        ticTacToeBoard.putMiddle("x");
+        // Put O in the Left Bottom of the board
+        ticTacToeBoard.putMiddle("o");
+        //Check middle has an X in the left bottom
+        Assert.assertEquals("x", ticTacToeBoard.getMiddle());
+    }
+    @Test
+    public void checkMiddleLeftStaysSameWhenDoubleClick() {
+        TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
+        // Put X in the Left Bottom of the board
+        ticTacToeBoard.putMiddleLeft("x");
+        // Put O in the Left Bottom of the board
+        ticTacToeBoard.putMiddleLeft("o");
+        //Check middle has an X in the left bottom
+        Assert.assertEquals("x", ticTacToeBoard.getMiddleLeft());
+    }
+    @Test
+    public void checkToopMiddleStaysSameWhenDoubleClick() {
+        TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
+        // Put X in the Left Bottom of the board
+        ticTacToeBoard.putTopMiddle("x");
+        // Put O in the Left Bottom of the board
+        ticTacToeBoard.putTopMiddle("o");
+        //Check middle has an X in the left bottom
+        Assert.assertEquals("x", ticTacToeBoard.getTopMiddle());
+    }
+
 }
