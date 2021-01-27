@@ -19,6 +19,10 @@ public class TicTacToeBoard {
         if (bottomLeftValue == null) {
             bottomLeftValue = value;
             time += 1;
+            if (value.equals(middle) && value.equals(topRightValue)) {
+                // that value is the winner
+                boardWinner = value;
+            }
         }
     }
 
@@ -31,10 +35,10 @@ public class TicTacToeBoard {
     }
 
     public void putMiddleLeft(String value) {
-if (middleLeftValue == null) {
-    middleLeftValue = value;
-    time += 1;
-}
+        if (middleLeftValue == null) {
+            middleLeftValue = value;
+            time += 1;
+        }
     }
 
     public void putLeftTop(String value) {
@@ -52,7 +56,7 @@ if (middleLeftValue == null) {
         }
         //When there are three x's in a diagonal order (there is an x in the middle)
         //When the three diagonal order have the same value,
-        if (value.equals(middle)) {
+        if (value.equals(middle) && value.equals(bottomLeftValue)) {
             // that value is the winner
             boardWinner = value;
         }
@@ -66,8 +70,8 @@ if (middleLeftValue == null) {
     public void putTopMiddle(String ticTacToeMarker) {
         if (topMiddleValue == null) {
             topMiddleValue = ticTacToeMarker;
-        time += 1;
-    }
+            time += 1;
+        }
     }
 
 
@@ -91,10 +95,10 @@ if (middleLeftValue == null) {
     }
 
     public void putBottomRight(String value) {
-        if (bottomRightValue == null){
+        if (bottomRightValue == null) {
             bottomRightValue = value;
-        time += 1;
-    }
+            time += 1;
+        }
     }
 
     public String getTopMiddle() {

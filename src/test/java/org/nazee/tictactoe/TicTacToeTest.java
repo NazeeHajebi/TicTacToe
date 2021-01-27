@@ -11,7 +11,7 @@ import org.junit.Test;
 
 public class TicTacToeTest {
     @Test
-    @UseReporter(ClipboardReporter.class)
+    //@UseReporter(ClipboardReporter.class)
     public void TicTacToe() {
         //Make a TicTacToe board
         TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
@@ -383,5 +383,34 @@ public class TicTacToeTest {
         //Check middle has an X in the left bottom
         Assert.assertEquals("x", ticTacToeBoard.getTopMiddle());
     }
+    @Test
+    public void checkToopRightStaysSameWhenDoubleClick() {
+        TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
+        // Put X in the Left Bottom of the board
+        ticTacToeBoard.putRightTop("x");
+        // Put O in the Left Bottom of the board
+        ticTacToeBoard.putRightTop("o");
+        //Check middle has an X in the left bottom
+        Assert.assertEquals("x", ticTacToeBoard.getTopRight());
+    }
 
+    @Test
+    public void checkXIsAWinner() {
+
+        TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
+        //check tictactoeboard winner is null
+        // Check no body has won
+        Assert.assertEquals(null, ticTacToeBoard.winner());
+        ticTacToeBoard.putMiddle("x");
+        Assert.assertEquals(null, ticTacToeBoard.winner());
+        ticTacToeBoard.putTopMiddle("o");
+        Assert.assertEquals(null, ticTacToeBoard.winner());
+        ticTacToeBoard.putRightTop("x");
+        Assert.assertEquals(null, ticTacToeBoard.winner());
+        ticTacToeBoard.putMiddleRight("o");
+        Assert.assertEquals(null, ticTacToeBoard.winner());
+        ticTacToeBoard.putBottomLeft("x");
+        //check X is a winner
+        Assert.assertEquals("x", ticTacToeBoard.winner());
+    }
 }

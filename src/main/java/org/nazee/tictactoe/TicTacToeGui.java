@@ -36,6 +36,7 @@ public class TicTacToeGui extends JPanel implements MouseListener {
         bottomLeft.setText(ticTacToeBoard.getBottomLeft());
         bottomMiddle.setText(ticTacToeBoard.getBottomMiddle());
         bottomRight.setText(ticTacToeBoard.getBottomRight());
+        repaint();
     }
 
     private void createBoard() {
@@ -143,5 +144,13 @@ public class TicTacToeGui extends JPanel implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {
 
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        if (this.ticTacToeBoard.winner() != null) {
+            g.drawString("X has Won", 120, 150);
+        }
     }
 }
