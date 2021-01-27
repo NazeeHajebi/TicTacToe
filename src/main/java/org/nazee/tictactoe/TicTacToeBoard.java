@@ -90,7 +90,6 @@ public class TicTacToeBoard {
             //When the middle column have the same values(X OR O) THAT VALUE WINS
             //When the bottom row all have the same values (X or O) that value wins
 
-            boardWinner = value;
         }
     }
 

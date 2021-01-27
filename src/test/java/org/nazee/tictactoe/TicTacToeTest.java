@@ -413,4 +413,14 @@ public class TicTacToeTest {
         //check X is a winner
         Assert.assertEquals("x", ticTacToeBoard.winner());
     }
+
+    @Test
+    public void CheckNoOneIsAWinner() {
+        //create the tictactoeboard
+        TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
+        //Put X on middle bottom
+        ticTacToeBoard.putBottomMiddle("x");
+        //check nobody won
+        Assert.assertEquals(null, ticTacToeBoard.winner());
+    }
 }
