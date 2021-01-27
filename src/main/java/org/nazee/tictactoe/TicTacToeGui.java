@@ -150,7 +150,7 @@ public class TicTacToeGui extends JPanel implements MouseListener {
     public void paint(Graphics g) {
         super.paint(g);
         if (this.ticTacToeBoard.winner() != null) {
-            g.drawString("X has Won", 120, 150);
+            g.drawString(ticTacToeBoard.winner() + " has Won", 120, 150);
         }
     }
 }
