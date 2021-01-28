@@ -42,7 +42,7 @@ public class TicTacToeBoard {
         if (middleLeftValue == null) {
             middleLeftValue = value;
             time += 1;
-            if (value.equals(middle) && value.equals(middleRightValue)) {
+            if (middleLeftValue.equals(middle) && value.equals(middleLeftValue)) {
                 // that value is the winner
                 boardWinner = value;
             }
