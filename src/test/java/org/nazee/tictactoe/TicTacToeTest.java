@@ -384,7 +384,7 @@ public class TicTacToeTest {
         Assert.assertEquals("x", ticTacToeBoard.getTopMiddle());
     }
     @Test
-    public void checkToopRightStaysSameWhenDoubleClick() {
+    public void checkTopRightStaysSameWhenDoubleClick() {
         TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
         // Put X in the Left Bottom of the board
         ticTacToeBoard.putRightTop("x");
@@ -422,5 +422,6 @@ public class TicTacToeTest {
         ticTacToeBoard.putBottomMiddle("x");
         //check nobody won
         Assert.assertEquals(null, ticTacToeBoard.winner());
+
     }
 }

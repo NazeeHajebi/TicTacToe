@@ -64,6 +64,7 @@ public class TicTacToeBoard {
 
     public String winner() {
         //no box has a value
+        // I added this code
         return boardWinner;
     }
 
@@ -89,7 +90,10 @@ public class TicTacToeBoard {
             //O wins
             //When the middle column have the same values(X OR O) THAT VALUE WINS
             //When the bottom row all have the same values (X or O) that value wins
-
+            if (value.equals(middle) && value.equals(topMiddleValue)) {
+                // that value is the winner
+                boardWinner = value;
+            }
         }
     }
 
