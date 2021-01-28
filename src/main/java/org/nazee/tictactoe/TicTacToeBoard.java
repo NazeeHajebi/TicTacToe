@@ -32,7 +32,7 @@ public class TicTacToeBoard {
             //it is the next persons turn
             time += 1;
         }
-        if (value.equals(middleLeftValue) && value.equals(middleRightValue)) {
+        if (value.equals(middleLeftValue) && value.equals(middleRightValue) && value.equals(middle)) {
             // that value is the winner
             boardWinner = value;
         }
@@ -42,7 +42,7 @@ public class TicTacToeBoard {
         if (middleLeftValue == null) {
             middleLeftValue = value;
             time += 1;
-            if (middleLeftValue.equals(middle) && middleLeftValue.equals(middleRightValue)) {
+            if (value.equals(middle) && value.equals(middleLeftValue) && value.equals(middleRightValue)) {
                 // that value is the winner
                 boardWinner = value;
             }
