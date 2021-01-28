@@ -26,7 +26,8 @@ public class TicTacToeGui extends JPanel implements MouseListener {
         refreshBoard();
     }
 
-    private void refreshBoard() {
+    private void
+    refreshBoard() {
         topLeft.setText(ticTacToeBoard.getTopLeft());
         topMiddle.setText(ticTacToeBoard.getTopMiddle());
         topRight.setText(ticTacToeBoard.getTopRight());

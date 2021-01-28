@@ -424,4 +424,44 @@ public class TicTacToeTest {
         Assert.assertEquals(null, ticTacToeBoard.winner());
 
     }
+
+    @Test
+    public void checkMiddleRowWins() {
+        //create the tictactoeboard
+        TicTacToeBoard ticTacToeBoard  =  new TicTacToeBoard();
+        //Put X  on  middle
+        ticTacToeBoard.putMiddle("x");
+        //Put x  on  middle  right
+        ticTacToeBoard.putMiddleRight("x");
+        //put x  on  middle left
+        ticTacToeBoard.putMiddleLeft("x");
+        Assert.assertEquals("x", ticTacToeBoard.winner());
+    }
+
+    @Test
+    public void checkMiddleRowWinsDifferentOrder() {
+        //create the tictactoeboard
+        TicTacToeBoard ticTacToeBoard  =  new TicTacToeBoard();
+        //put x  on  middle left
+        ticTacToeBoard.putMiddleLeft("x");
+        //Put x  on  middle  right
+        ticTacToeBoard.putMiddleRight("x");
+        //Put X  on  middle
+        ticTacToeBoard.putMiddle("x");
+
+        Assert.assertEquals("x", ticTacToeBoard.winner());
+    }
+    @Test
+    public void checkMiddleRowWinsDifferentOrder2() {
+        //create the tictactoeboard
+        TicTacToeBoard ticTacToeBoard  =  new TicTacToeBoard();
+        //put x  on  middle left
+        ticTacToeBoard.putMiddleLeft("x");
+        //Put X  on  middle
+        ticTacToeBoard.putMiddle("x");
+        //Put x  on  middle  right
+        ticTacToeBoard.putMiddleRight("x");
+
+        Assert.assertEquals("x", ticTacToeBoard.winner());
+    }
 }
