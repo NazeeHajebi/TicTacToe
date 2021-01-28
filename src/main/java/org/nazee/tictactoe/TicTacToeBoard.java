@@ -90,7 +90,7 @@ public class TicTacToeBoard {
             time += 1;
         }
         //Check  middle across has  the same value
-        if (value.equals(middle) && value.equals(middleLeftValue)) {
+        if (middleRightValue.equals(middle) && middleRightValue.equals(middleLeftValue)) {
             // that value is the winner
             boardWinner = value;
         }
