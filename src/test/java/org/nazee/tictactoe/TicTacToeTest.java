@@ -464,4 +464,13 @@ public class TicTacToeTest {
 
         Assert.assertEquals("x", ticTacToeBoard.winner());
     }
+
+    @Test
+    public void checkFirstColumnWins() {
+        TicTacToeBoard ticTacToeBoard  =  new TicTacToeBoard();
+        ticTacToeBoard.putLeftTop("x");
+        ticTacToeBoard.putMiddleLeft("x");
+        ticTacToeBoard.putBottomLeft("x");
+        Assert.assertEquals("x", ticTacToeBoard.winner());
+    }
 }

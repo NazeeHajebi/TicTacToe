@@ -23,6 +23,10 @@ public class TicTacToeBoard {
                 // that value is the winner
                 boardWinner = value;
             }
+            //check  middle left value and top left value and middle bottom value are the same
+            if  (value.equals(middleLeftValue) && value.equals(topLeftValue)) {
+                boardWinner = value;
+            }
         }
     }
 
