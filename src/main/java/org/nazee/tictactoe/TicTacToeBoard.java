@@ -59,6 +59,10 @@ public class TicTacToeBoard {
             topLeftValue = value;
             time += 1;
         }
+        topMiddleWins(value);
+    }
+
+    private void topMiddleWins(String value) {
         if (value.equals(topRightValue) && value.equals(topMiddleValue) && value.equals(topLeftValue)) {
             // that value is the winner
             boardWinner = value;

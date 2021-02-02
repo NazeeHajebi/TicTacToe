@@ -93,7 +93,7 @@ public class TicTacToeGui extends JPanel implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.println("mouse clicked");
+
         //when the user clicks on top left add an x
 
     }
@@ -133,12 +133,10 @@ public class TicTacToeGui extends JPanel implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        System.out.println("mouse pressed");
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        System.out.println("mouse Released");
         Component button = e.getComponent();
         buttonClicked(button);
     }
