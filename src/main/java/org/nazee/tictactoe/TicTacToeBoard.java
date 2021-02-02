@@ -90,11 +90,12 @@ public class TicTacToeBoard {
         return boardWinner;
     }
 
-    public void putTopMiddle(String ticTacToeMarker) {
+    public void putTopMiddle(String value) {
         if (topMiddleValue == null) {
-            topMiddleValue = ticTacToeMarker;
+            topMiddleValue = value;
             time += 1;
         }
+        topMiddleWins(value);
     }
 
 
