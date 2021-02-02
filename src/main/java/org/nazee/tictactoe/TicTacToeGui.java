@@ -12,7 +12,6 @@ public class TicTacToeGui extends JPanel implements MouseListener {
     private JButton topLeft;
     private JButton topMiddle;
     private JButton topRight;
-    private JButton middleTop;
     private JButton middleLeft;
     private JButton middle;
     private JButton middleRight;
@@ -94,33 +93,38 @@ public class TicTacToeGui extends JPanel implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        System.out.println("mouse clicked");
         //when the user clicks on top left add an x
-        if (topLeft == e.getComponent()) {
+
+    }
+
+    private void buttonClicked(Component button) {
+        if (topLeft == button) {
             this.ticTacToeBoard.putLeftTop(this.ticTacToeBoard.whoseTurnItIs());
             refreshBoard();
             //When the user click on Top middle put an O
-        } else if (topMiddle == e.getComponent()) {
+        } else if (topMiddle == button) {
             this.ticTacToeBoard.putTopMiddle(this.ticTacToeBoard.whoseTurnItIs());
             refreshBoard();
-        } else if (topRight == e.getComponent()) {
+        } else if (topRight == button) {
             this.ticTacToeBoard.putRightTop(this.ticTacToeBoard.whoseTurnItIs());
             refreshBoard();
-        } else if (bottomLeft == e.getComponent()) {
+        } else if (bottomLeft == button) {
             this.ticTacToeBoard.putBottomLeft(this.ticTacToeBoard.whoseTurnItIs());
             refreshBoard();
-        } else if (bottomMiddle == e.getComponent()) {
+        } else if (bottomMiddle == button) {
             this.ticTacToeBoard.putBottomMiddle(this.ticTacToeBoard.whoseTurnItIs());
             refreshBoard();
-        } else if (bottomRight == e.getComponent()) {
+        } else if (bottomRight == button) {
             this.ticTacToeBoard.putBottomRight(this.ticTacToeBoard.whoseTurnItIs());
             refreshBoard();
-        } else if (middleRight == e.getComponent()) {
+        } else if (middleRight == button) {
             this.ticTacToeBoard.putMiddleRight(this.ticTacToeBoard.whoseTurnItIs());
             refreshBoard();
-        } else if (middle == e.getComponent()) {
+        } else if (middle == button) {
             this.ticTacToeBoard.putMiddle(this.ticTacToeBoard.whoseTurnItIs());
             refreshBoard();
-        } else if (middleLeft == e.getComponent()) {
+        } else if (middleLeft == button) {
             this.ticTacToeBoard.putMiddleLeft(this.ticTacToeBoard.whoseTurnItIs());
             refreshBoard();
         }
@@ -129,22 +133,22 @@ public class TicTacToeGui extends JPanel implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-
+        System.out.println("mouse pressed");
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-
+        System.out.println("mouse Released");
+        Component button = e.getComponent();
+        buttonClicked(button);
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
     }
 
     @Override

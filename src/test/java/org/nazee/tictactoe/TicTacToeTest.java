@@ -466,11 +466,23 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void checkFirstColumnWins() {
+    public void FirstColumnWins() {
         TicTacToeBoard ticTacToeBoard  =  new TicTacToeBoard();
         ticTacToeBoard.putLeftTop("x");
         ticTacToeBoard.putMiddleLeft("x");
         ticTacToeBoard.putBottomLeft("x");
+        Assert.assertEquals("x", ticTacToeBoard.winner());
+    }
+
+    @Test
+    public void FirstRowWins () {
+        TicTacToeBoard ticTacToeBoard  =  new TicTacToeBoard();
+        //put x  on right top
+        ticTacToeBoard.putRightTop("x");
+        //put x on middle top
+        ticTacToeBoard.putTopMiddle("x");
+        //put x  on left top
+        ticTacToeBoard.putLeftTop("x");
         Assert.assertEquals("x", ticTacToeBoard.winner());
     }
 }
