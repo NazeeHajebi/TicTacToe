@@ -81,6 +81,7 @@ public class TicTacToeBoard {
             // that value is the winner
             boardWinner = value;
         }
+        topMiddleWins(value);
     }
 
     public String winner() {
