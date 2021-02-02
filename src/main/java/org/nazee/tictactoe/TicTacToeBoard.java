@@ -134,6 +134,7 @@ public class TicTacToeBoard {
             bottomRightValue = value;
             time += 1;
         }
+        bottomRowWins(value);
     }
 
     public String getTopMiddle() {
