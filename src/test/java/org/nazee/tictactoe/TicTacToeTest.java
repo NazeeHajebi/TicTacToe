@@ -509,4 +509,15 @@ public class TicTacToeTest {
 
         Assert.assertEquals("x", ticTacToeBoard.winner());
     }
+    @Test
+    public void firstBottomWins() {
+        TicTacToeBoard ticTacToeBoard  =  new TicTacToeBoard();
+
+        ticTacToeBoard.putBottomLeft("x");
+        ticTacToeBoard.putBottomRight("x");
+        //put x on middle top
+        ticTacToeBoard.putBottomMiddle("x");
+
+        Assert.assertEquals("x", ticTacToeBoard.winner());
+    }
 }

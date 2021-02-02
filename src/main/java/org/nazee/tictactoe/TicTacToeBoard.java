@@ -119,6 +119,9 @@ public class TicTacToeBoard {
                 // that value is the winner
                 boardWinner = value;
             }
+            if (value.equals(bottomLeftValue) && value.equals(bottomRightValue) && value.equals(bottomMiddleValue))  {
+                boardWinner  =  value;
+            }
         }
     }
 
