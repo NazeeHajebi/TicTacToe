@@ -4,7 +4,6 @@ public class TicTacToeBoard {
 
     private String boardWinner;
     private String [][] grid = new String[3][3];
-    private String middle;
     private String middleLeftValue;
     private String middleRightValue;
     private String bottomLeftValue;
@@ -17,7 +16,7 @@ public class TicTacToeBoard {
         if (bottomLeftValue == null) {
             bottomLeftValue = value;
             time += 1;
-            if (value.equals(middle) && value.equals(grid [0][2])) {
+            if (value.equals(grid [1][1]) && value.equals(grid [0][2])) {
                 // that value is the winner
                 boardWinner = value;
             }
@@ -34,8 +33,8 @@ public class TicTacToeBoard {
     }
 
     public void putMiddle(String value) {
-        if (middle == null) {
-            middle = value;
+        if (grid [1][1] == null) {
+            grid [1][1] = value;
             //it is the next persons turn
             time += 1;
         }
@@ -52,7 +51,7 @@ public class TicTacToeBoard {
     }
 
     private void isMiddleRowWinner(String value) {
-        if (value.equals(middle) && value.equals(middleLeftValue) && value.equals(middleRightValue)) {
+        if (value.equals (grid [1][1]) && value.equals(middleLeftValue) && value.equals(middleRightValue)) {
             // that value is the winner
             boardWinner = value;
         }
@@ -82,7 +81,7 @@ public class TicTacToeBoard {
         }
         //When there are three x's in a diagonal order (there is an x in the middle)
         //When the three diagonal order have the same value,
-        if (value.equals(middle) && value.equals(bottomLeftValue)) {
+        if (value.equals(grid [1][1]) && value.equals(bottomLeftValue)) {
             // that value is the winner
             boardWinner = value;
         }
@@ -129,7 +128,7 @@ public class TicTacToeBoard {
             //O wins
             //When the middle column have the same values(X OR O) THAT VALUE WINS
             //When the bottom row all have the same values (X or O) that value wins
-            if (value.equals(middle) && value.equals(grid [0][1])) {
+            if (value.equals(grid [1][1]) && value.equals(grid [0][1])) {
                 // that value is the winner
                 boardWinner = value;
             }
@@ -186,7 +185,7 @@ public class TicTacToeBoard {
     }
 
     public String getMiddle() {
-        return middle;
+        return grid [1][1];
     }
 
     public String whoseTurnItIs() {
