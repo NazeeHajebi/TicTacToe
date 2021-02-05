@@ -3,7 +3,6 @@ package org.nazee.tictactoe;
 public class TicTacToeBoard {
 
     private String boardWinner;
-    private String topMiddleValue;
     private String topRightValue;
     private String [][] grid = new String[3][3];
     private String middle;
@@ -70,7 +69,7 @@ public class TicTacToeBoard {
     }
 
     private void topRowWins(String value) {
-        if (value.equals(topRightValue) && value.equals(topMiddleValue) && value.equals(grid[0][0])) {
+        if (value.equals(topRightValue) && value.equals(grid [0][1]) && value.equals(grid[0][0])) {
             // that value is the winner
             boardWinner = value;
         }
@@ -105,8 +104,8 @@ public class TicTacToeBoard {
     }
 
     public void putTopMiddle(String value) {
-        if (topMiddleValue == null) {
-            topMiddleValue = value;
+        if (grid [0][1] == null) {
+            grid [0][1] = value;
             time += 1;
         }
         topRowWins(value);
@@ -131,7 +130,7 @@ public class TicTacToeBoard {
             //O wins
             //When the middle column have the same values(X OR O) THAT VALUE WINS
             //When the bottom row all have the same values (X or O) that value wins
-            if (value.equals(middle) && value.equals(topMiddleValue)) {
+            if (value.equals(middle) && value.equals(grid [0][1])) {
                 // that value is the winner
                 boardWinner = value;
             }
@@ -156,7 +155,7 @@ public class TicTacToeBoard {
 
     public String getTopMiddle() {
         // return the value in the top middle
-        return topMiddleValue;
+        return grid [0][1];
     }
 
     public String getTopRight() {
