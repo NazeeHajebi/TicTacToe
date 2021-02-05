@@ -3,7 +3,6 @@ package org.nazee.tictactoe;
 public class TicTacToeBoard {
 
     private String boardWinner;
-    private String topRightValue;
     private String [][] grid = new String[3][3];
     private String middle;
     private String middleLeftValue;
@@ -18,7 +17,7 @@ public class TicTacToeBoard {
         if (bottomLeftValue == null) {
             bottomLeftValue = value;
             time += 1;
-            if (value.equals(middle) && value.equals(topRightValue)) {
+            if (value.equals(middle) && value.equals(grid [0][2])) {
                 // that value is the winner
                 boardWinner = value;
             }
@@ -69,7 +68,7 @@ public class TicTacToeBoard {
     }
 
     private void topRowWins(String value) {
-        if (value.equals(topRightValue) && value.equals(grid [0][1]) && value.equals(grid[0][0])) {
+        if (value.equals(grid [0][2]) && value.equals(grid [0][1]) && value.equals(grid[0][0])) {
             // that value is the winner
             boardWinner = value;
         }
@@ -77,8 +76,8 @@ public class TicTacToeBoard {
 
     public void putRightTop(String value) {
         //Put x on the right top box
-        if (topRightValue == null) {
-            topRightValue = value;
+        if (grid [0][2] == null) {
+            grid [0][2] = value;
             time += 1;
         }
         //When there are three x's in a diagonal order (there is an x in the middle)
@@ -92,7 +91,7 @@ public class TicTacToeBoard {
     }
 
     private void rightColumnWins(String value) {
-        if (value.equals(bottomRightValue) && value.equals(middleRightValue) && value.equals(topRightValue)) {
+        if (value.equals(bottomRightValue) && value.equals(middleRightValue) && value.equals(grid [0][2])) {
             boardWinner  =  value;
         }
     }
@@ -159,7 +158,7 @@ public class TicTacToeBoard {
     }
 
     public String getTopRight() {
-        return topRightValue;
+        return grid [0][2];
     }
 
     public String getTopLeft() {
