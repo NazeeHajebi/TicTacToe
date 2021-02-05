@@ -4,7 +4,6 @@ public class TicTacToeBoard {
 
     private String boardWinner;
     private String [][] grid = new String[3][3];
-    private String bottomMiddleValue;
     private String bottomRightValue;
     private int time = 1;
 
@@ -119,8 +118,8 @@ public class TicTacToeBoard {
     }
 
     public void putBottomMiddle(String value) {
-        if (bottomMiddleValue == null) {
-            bottomMiddleValue = value;
+        if (grid [2][1] == null) {
+            grid [2][1]  = value;
             time += 1;
             //O wins
             //When the middle column have the same values(X OR O) THAT VALUE WINS
@@ -134,7 +133,7 @@ public class TicTacToeBoard {
     }
 
     private void bottomRowWins(String value) {
-        if (value.equals(grid [2][0]) && value.equals(bottomRightValue) && value.equals(bottomMiddleValue))  {
+        if (value.equals(grid [2][0]) && value.equals(bottomRightValue) && value.equals(grid [2][1] ))  {
             boardWinner  =  value;
         }
     }
@@ -174,7 +173,7 @@ public class TicTacToeBoard {
     }
 
     public String getBottomMiddle() {
-        return bottomMiddleValue;
+        return grid [2][1] ;
     }
 
     public String getBottomRight() {
