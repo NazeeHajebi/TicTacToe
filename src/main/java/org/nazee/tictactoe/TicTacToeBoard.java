@@ -89,6 +89,13 @@ public class TicTacToeBoard {
             boardWinner = value;
         }
         topRowWins(value);
+        rightColumnWins(value);
+    }
+
+    private void rightColumnWins(String value) {
+        if (value.equals(bottomRightValue) && value.equals(middleRightValue) && value.equals(topRightValue)) {
+            boardWinner  =  value;
+        }
     }
 
     public String winner() {
@@ -113,6 +120,8 @@ public class TicTacToeBoard {
         }
         //Check  middle across has  the same value
         isMiddleRowWinner(value);
+        rightColumnWins(value);
+
     }
 
     public void putBottomMiddle(String value) {
@@ -141,6 +150,7 @@ public class TicTacToeBoard {
             bottomRightValue = value;
             time += 1;
         }
+        rightColumnWins(value);
         bottomRowWins(value);
     }
 
