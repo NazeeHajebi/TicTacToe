@@ -4,15 +4,14 @@ public class TicTacToeBoard {
 
     private String boardWinner;
     private String [][] grid = new String[3][3];
-    private String bottomLeftValue;
     private String bottomMiddleValue;
     private String bottomRightValue;
     private int time = 1;
 
 
     public void putBottomLeft(String value) {
-        if (bottomLeftValue == null) {
-            bottomLeftValue = value;
+        if (grid [2][0] == null) {
+            grid [2][0] = value;
             time += 1;
             if (value.equals(grid [1][1]) && value.equals(grid [0][2])) {
                 // that value is the winner
@@ -25,7 +24,7 @@ public class TicTacToeBoard {
     }
 
     private void leftColumnWins(String value) {
-        if  (value.equals(grid [1][0]) && value.equals(grid[0][0]) && value.equals(bottomLeftValue)) {
+        if  (value.equals(grid [1][0]) && value.equals(grid[0][0]) && value.equals(grid [2][0])) {
             boardWinner = value;
         }
     }
@@ -79,7 +78,7 @@ public class TicTacToeBoard {
         }
         //When there are three x's in a diagonal order (there is an x in the middle)
         //When the three diagonal order have the same value,
-        if (value.equals(grid [1][1]) && value.equals(bottomLeftValue)) {
+        if (value.equals(grid [1][1]) && value.equals(grid [2][0])) {
             // that value is the winner
             boardWinner = value;
         }
@@ -135,7 +134,7 @@ public class TicTacToeBoard {
     }
 
     private void bottomRowWins(String value) {
-        if (value.equals(bottomLeftValue) && value.equals(bottomRightValue) && value.equals(bottomMiddleValue))  {
+        if (value.equals(grid [2][0]) && value.equals(bottomRightValue) && value.equals(bottomMiddleValue))  {
             boardWinner  =  value;
         }
     }
@@ -171,7 +170,7 @@ public class TicTacToeBoard {
     }
 
     public String getBottomLeft() {
-        return bottomLeftValue;
+        return grid [2][0];
     }
 
     public String getBottomMiddle() {
