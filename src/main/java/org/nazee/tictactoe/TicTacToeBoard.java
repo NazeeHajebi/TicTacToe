@@ -120,16 +120,13 @@ public class TicTacToeBoard {
     }
 
     private void bottomRowWins(String value) {
-        int row = 2;
-        checkIfRowWins(value, row);
+        checkIfRowWins(value, 2);
     }
     private void isMiddleRowWinner(String value) {
-        int row = 1;
-        checkIfRowWins(value, row);
+        checkIfRowWins(value, 1);
     }
     private void topRowWins(String value) {
-        int row = 0;
-        checkIfRowWins(value, row);
+        checkIfRowWins(value, 0);
     }
 
     private void checkIfRowWins(String value, int row) {
