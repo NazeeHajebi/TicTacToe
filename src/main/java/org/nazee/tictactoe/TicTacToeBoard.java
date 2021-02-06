@@ -22,8 +22,13 @@ public class TicTacToeBoard {
     }
 
     private void leftColumnWins(String value) {
-        if  (value.equals(grid [1][0]) && value.equals(grid[0][0]) && value.equals(grid [2][0])) {
+        if  (value.equals(grid [0][0]) && value.equals(grid[1][0]) && value.equals(grid [2][0])) {
             boardWinner = value;
+        }
+    }
+    private void rightColumnWins(String value) {
+        if (value.equals(grid [2][2] ) && value.equals(grid [1][2]) && value.equals(grid [0][2])) {
+            boardWinner  =  value;
         }
     }
 
@@ -72,11 +77,7 @@ public class TicTacToeBoard {
         rightColumnWins(value);
     }
 
-    private void rightColumnWins(String value) {
-        if (value.equals(grid [2][2] ) && value.equals(grid [1][2]) && value.equals(grid [0][2])) {
-            boardWinner  =  value;
-        }
-    }
+
 
     public String winner() {
         //no box has a value
