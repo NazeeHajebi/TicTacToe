@@ -51,7 +51,7 @@ public class TicTacToeBoard {
             grid[0][0] = value;
             time += 1;
         }
-        topRowWins(value);
+        checkIfRowWins(value, 0);
         leftColumnWins(value);
     }
 
@@ -68,7 +68,7 @@ public class TicTacToeBoard {
             // that value is the winner
             boardWinner = value;
         }
-        topRowWins(value);
+        checkIfRowWins(value, 0);
         rightColumnWins(value);
     }
 
@@ -89,7 +89,7 @@ public class TicTacToeBoard {
             grid [0][1] = value;
             time += 1;
         }
-        topRowWins(value);
+        checkIfRowWins(value, 0);
     }
 
 
@@ -124,9 +124,6 @@ public class TicTacToeBoard {
     }
     private void isMiddleRowWinner(String value) {
         checkIfRowWins(value, 1);
-    }
-    private void topRowWins(String value) {
-        checkIfRowWins(value, 0);
     }
 
     private void checkIfRowWins(String value, int row) {
