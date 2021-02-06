@@ -45,12 +45,6 @@ public class TicTacToeBoard {
         leftColumnWins(value);
     }
 
-    private void isMiddleRowWinner(String value) {
-        if (value.equals (grid [1][0]) && value.equals(grid [1][1]) && value.equals(grid [1][2])) {
-            // that value is the winner
-            boardWinner = value;
-        }
-    }
 
     public void putLeftTop(String value) {
         if (grid[0][0] == null) {
@@ -61,12 +55,6 @@ public class TicTacToeBoard {
         leftColumnWins(value);
     }
 
-    private void topRowWins(String value) {
-        if (value.equals(grid [0][2]) && value.equals(grid [0][1]) && value.equals(grid[0][0])) {
-            // that value is the winner
-            boardWinner = value;
-        }
-    }
 
     public void putRightTop(String value) {
         //Put x on the right top box
@@ -134,6 +122,18 @@ public class TicTacToeBoard {
     private void bottomRowWins(String value) {
         if (value.equals(grid [2][0]) && value.equals(grid [2][1])  && value.equals(grid [2][2] ))  {
             boardWinner  =  value;
+        }
+    }
+    private void isMiddleRowWinner(String value) {
+        if (value.equals (grid [1][0]) && value.equals(grid [1][1]) && value.equals(grid [1][2])) {
+            // that value is the winner
+            boardWinner = value;
+        }
+    }
+    private void topRowWins(String value) {
+        if (value.equals(grid [0][0]) && value.equals(grid [0][1]) && value.equals(grid[0][2])) {
+            // that value is the winner
+            boardWinner = value;
         }
     }
 
