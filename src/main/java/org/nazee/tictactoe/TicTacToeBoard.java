@@ -120,18 +120,21 @@ public class TicTacToeBoard {
     }
 
     private void bottomRowWins(String value) {
-        if (value.equals(grid [2][0]) && value.equals(grid [2][1])  && value.equals(grid [2][2] ))  {
+        int row = 2;
+        if (value.equals(grid [row][0]) && value.equals(grid [row][1])  && value.equals(grid [row][2] ))  {
             boardWinner  =  value;
         }
     }
     private void isMiddleRowWinner(String value) {
-        if (value.equals (grid [1][0]) && value.equals(grid [1][1]) && value.equals(grid [1][2])) {
+        int row = 1;
+        if (value.equals (grid [row][0]) && value.equals(grid [row][1]) && value.equals(grid [row][2])) {
             // that value is the winner
             boardWinner = value;
         }
     }
     private void topRowWins(String value) {
-        if (value.equals(grid [0][0]) && value.equals(grid [0][1]) && value.equals(grid[0][2])) {
+        int row = 0;
+        if (value.equals(grid [row][0]) && value.equals(grid [row][1]) && value.equals(grid[row][2])) {
             // that value is the winner
             boardWinner = value;
         }
