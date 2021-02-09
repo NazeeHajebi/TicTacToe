@@ -40,6 +40,8 @@ public class TicTacToeBoard {
         checkIfColumnWins(value, 0);
         checkIfColumnWins(value, 1);
         checkIfColumnWins(value, 2);
+        checkIfDiagnoalLeftDownWins(value);
+        checkIfDiagnoalRightWins(value);
     }
 
     public void putMiddleLeft(String value) {
@@ -128,6 +130,18 @@ public class TicTacToeBoard {
         }
     }
 
+    private void checkIfDiagnoalLeftDownWins(String value) {
+        if (value.equals(grid [0][0]) && value.equals(grid [1][1]) && value.equals(grid[2][2])) {
+            // that value is the winner
+            boardWinner = value;
+        }
+    }
+    private void checkIfDiagnoalRightWins(String value) {
+        if (value.equals(grid [0][2]) && value.equals(grid [1][1]) && value.equals(grid[2][0])) {
+            // that value is the winner
+            boardWinner = value;
+        }
+    }
     public void putBottomRight(String value) {
         if (grid [2][2] == null) {
             grid [2][2] = value;
