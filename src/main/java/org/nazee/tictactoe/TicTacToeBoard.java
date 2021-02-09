@@ -37,6 +37,9 @@ public class TicTacToeBoard {
         checkIfRowWins(value, 0);
         checkIfRowWins(value, 1);
         checkIfRowWins(value, 2);
+        checkIfColumnWins(value, 0);
+        checkIfColumnWins(value, 1);
+        checkIfColumnWins(value, 2);
     }
 
     public void putMiddleLeft(String value) {
