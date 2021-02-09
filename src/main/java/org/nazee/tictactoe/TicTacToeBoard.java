@@ -34,8 +34,9 @@ public class TicTacToeBoard {
         grid [1][1] = value;
         //it is the next persons turn
         time += 1;
+        checkIfRowWins(value, 0);
         checkIfRowWins(value, 1);
-
+        checkIfRowWins(value, 2);
     }
 
     public void putMiddleLeft(String value) {
