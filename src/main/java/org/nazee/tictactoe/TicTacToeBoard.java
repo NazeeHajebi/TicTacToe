@@ -16,13 +16,9 @@ public class TicTacToeBoard {
                 boardWinner = value;
             }
             //check  middle left value and top left value and middle bottom value are the same
-            leftColumnWins(value);
+            checkIfColumnWins(value, 0);
         }
         checkIfRowWins(value, 2);
-    }
-
-    private void leftColumnWins(String value) {
-        checkIfColumnWins(value, 0);
     }
 
     private void checkIfColumnWins(String value, int column) {
@@ -32,12 +28,14 @@ public class TicTacToeBoard {
     }
 
     public void putMiddle(String value) {
-        if (grid [1][1] == null) {
-            grid [1][1] = value;
-            //it is the next persons turn
-            time += 1;
+        if (grid[1][1] != null) {
+            return;
         }
+        grid [1][1] = value;
+        //it is the next persons turn
+        time += 1;
         checkIfRowWins(value, 1);
+
     }
 
     public void putMiddleLeft(String value) {
@@ -46,7 +44,7 @@ public class TicTacToeBoard {
             time += 1;
             checkIfRowWins(value, 1);
         }
-        leftColumnWins(value);
+        checkIfColumnWins(value, 0);
     }
 
 
@@ -56,7 +54,7 @@ public class TicTacToeBoard {
             time += 1;
         }
         checkIfRowWins(value, 0);
-        leftColumnWins(value);
+        checkIfColumnWins(value, 0);
     }
 
 
